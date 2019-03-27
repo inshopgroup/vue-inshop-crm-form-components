@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    <form-input :item="item" property="input" label="Input" :errors="errors" @fieldUpdated="updateValue"></form-input>
-    <form-number :item="item" property="number" label="Number" :errors="errors" @fieldUpdated="updateValue"></form-number>
-    <form-password :item="item" property="password" label="Password" :errors="errors" @fieldUpdated="updateValue"></form-password>
-    <form-textarea :item="item" property="textarea" label="Textarea" :errors="errors" @fieldUpdated="updateValue"></form-textarea>
-    <form-checkbox :item="item" property="checkbox" label="Checkbox" :errors="errors" @fieldUpdated="updateValue"></form-checkbox>
-    <form-time-picker :item="item" property="time" label="Time" :errors="errors" @fieldUpdated="updateValue"></form-time-picker>
-    <form-date-picker :item="item" property="date" label="Date" :errors="errors" @fieldUpdated="updateValue"></form-date-picker>
-    <form-date-time-picker :item="item" property="datetime" label="Datetime" :errors="errors" @fieldUpdated="updateValue"></form-date-time-picker>
-    <!--<form-files :item="item" property="files" label="Fiels" :errors="errors" @fieldUpdated="updateValue"></form-files>-->
-    <!--<form-select :item="item" property="select" label="Select" :errors="errors" @fieldUpdated="updateValue"></form-select>-->
-    <!--<form-select-autocomplete :item="item" property="select" label="Select" :errors="errors" @fieldUpdated="updateValue"></form-select-autocomplete>-->
+    <form-input :item="item" property="input" label="Input" :errors="errors" @formUpdated="updateValue"></form-input>
+    <form-input type="number" :item="item" property="number" label="Number" :errors="errors" @formUpdated="updateValue"></form-input>
+    <form-input type="email" :item="item" property="email" label="email" :errors="errors" @formUpdated="updateValue"></form-input>
+    <form-password :item="item" property="password" label="Password" :errors="errors" @formUpdated="updateValue"></form-password>
+    <form-textarea :item="item" property="textarea" label="Textarea" :errors="errors" @formUpdated="updateValue"></form-textarea>
+    <form-checkbox :item="item" property="checkbox" label="Checkbox" :errors="errors" @formUpdated="updateValue"></form-checkbox>
+    <form-time-picker :item="item" property="time" label="Time" :errors="errors" @formUpdated="updateValue"></form-time-picker>
+    <form-date-picker :item="item" property="date" label="Date" :errors="errors" @formUpdated="updateValue"></form-date-picker>
+    <form-date-time-picker :item="item" property="datetime" label="Datetime" :errors="errors" @formUpdated="updateValue"></form-date-time-picker>
+    <!--<form-files :item="item" property="files" label="Fiels" :errors="errors" @formUpdated="updateValue"></form-files>-->
+    <!--<form-select :item="item" property="select" label="Select" :errors="errors" @formUpdated="updateValue"></form-select>-->
+    <!--<form-select-autocomplete :item="item" property="autocomplete" label="Select" :errors="errors" @formUpdated="updateValue"></form-select-autocomplete>-->
 
     <pre>{{ data }}</pre>
   </div>
@@ -18,26 +19,57 @@
 
 <script>
   import Vue from 'vue'
-  import FormInput from "./components/FormInput";
-  import FormNumber from "./components/FormNumber";
-  import FormPassword from "./components/FormPassword";
-  import FormTextarea from "./components/FormTextarea";
-  import FormCheckbox from "./components/FormCheckbox";
-  import FormTimePicker from "./components/date/FormTimePicker";
-  import FormDatePicker from "./components/date/FormDatePicker";
-  import FormDateTimePicker from "./components/date/FormDateTimePicker";
-  import FormSelect from "./components/FormSelect";
+  import FormInput from "./components/form/FormInput";
+  import FormPassword from "./components/form/FormPassword";
+  import FormTextarea from "./components/form/FormTextarea";
+  import FormCheckbox from "./components/form/FormCheckbox";
+  import FormTimePicker from "./components/form/date/FormTimePicker";
+  import FormDatePicker from "./components/form/date/FormDatePicker";
+  import FormDateTimePicker from "./components/form/date/FormDateTimePicker";
+  import FormSelect from "./components/form/FormSelect";
 
   export default {
     name: 'app',
     components: {
       FormSelect,
       FormDateTimePicker,
-      FormDatePicker, FormTimePicker, FormCheckbox, FormTextarea, FormPassword, FormNumber, FormInput},
+      FormDatePicker,
+      FormTimePicker,
+      FormCheckbox,
+      FormTextarea,
+      FormPassword,
+      FormInput
+    },
     data() {
       return {
-        item: {},
-        errors: {}
+        item: {
+          input: null,
+          number: null,
+          email: null,
+          password: null,
+          textarea: null,
+          checkbox: null,
+          time: null,
+          date: null,
+          datetime: null,
+          files: null,
+          select: null,
+          autocomplete: null,
+        },
+        errors: {
+          input: 'Some error',
+          number: 'Some error',
+          email: 'Some error',
+          password: 'Some error',
+          textarea: 'Some error',
+          checkbox: 'Some error',
+          time: 'Some error',
+          date: 'Some error',
+          datetime: 'Some error',
+          files: 'Some error',
+          select: 'Some error',
+          autocomplete: 'Some error',
+        }
       }
     },
     methods: {

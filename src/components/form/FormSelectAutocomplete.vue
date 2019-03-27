@@ -1,5 +1,5 @@
 <template>
-  <div :class="['form-group', isInvalid() ? 'has-error' : '']">
+  <div :class="['form-group', isInvalid() ? 'is-invalid' : '']">
     <label :for="path" class="form-control-label">{{ label }}</label>
 
     <v-select

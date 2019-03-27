@@ -1,20 +1,25 @@
 <template>
-  <div :class="['form-check', isInvalid() ? 'has-error' : '']" style="margin-bottom: 20px;">
-    <input
-        :id="'id_' + (id || property)"
-        :checked="item[property]"
-        :class="['form-check-input', isInvalid('isActive') ? 'is-invalid' : '']"
-        type="checkbox"
-        @input="$emit('fieldUpdated', property, $event.target.checked, id)"
-    />
-    <label :for="'id_' + (id || property)" class="form-control-label">{{ label }}</label>
+  <div :class="['form-group', isInvalid() ? 'is-invalid' : '']" style="width: 400px;">
+    <label :for="property" class="form-control-label">{{ label }}</label>
+
+    <vue-password
+        :id="property"
+        :value="item[property]"
+        :classes="['form-control', isInvalid() ? 'is-invalid' : '']"
+        :user-inputs="[item.username]"
+        @input="$emit('fieldUpdated', property, $event)"
+    ></vue-password>
+
     <div v-if="isInvalid()" class="help-block">{{ errors[property] }}</div>
   </div>
 </template>
 
 <script>
+  import VuePassword from 'vue-password'
+
   export default {
-    name: 'FormCheckbox',
+    name: 'FormPassword',
+    components: {VuePassword},
     props: {
       item: {
         type: Object,
@@ -29,10 +34,6 @@
         default: null
       },
       label: {
-        type: String,
-        default: null
-      },
-      id: {
         type: String,
         default: null
       }

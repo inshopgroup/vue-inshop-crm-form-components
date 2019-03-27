@@ -1,0 +1,60 @@
+<template>
+  <div :class="['inshop-form', isInvalid() ? 'is-invalid' : '']">
+    <label :for="fieldId">{{ label }}</label>
+
+    <field-input
+        :id="fieldId"
+        :item="item"
+        :property="property"
+        :type="type"
+        @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
+    ></field-input>
+
+    <div v-if="isInvalid()" class="inshop-errors">{{ errors[property] }}</div>
+  </div>
+</template>
+
+<script>
+  import FieldInput from "../field/FieldInput";
+
+  export default {
+    name: 'FormInput',
+    components: {FieldInput},
+    props: {
+      id: {
+        type: String,
+        default: null
+      },
+      item: {
+        type: Object,
+        required: true
+      },
+      property: {
+        type: String,
+        required: true
+      },
+      type: {
+        type: String,
+        default: 'text'
+      },
+      label: {
+        type: String,
+        default: null
+      },
+      errors: {
+        type: Object,
+        default: () => {}
+      }
+    },
+    computed: {
+      fieldId() {
+        return this.id || this.property
+      }
+    },
+    methods: {
+      isInvalid() {
+        return Object.keys(this.errors).length > 0 && this.errors[this.property]
+      }
+    }
+  }
+</script>
