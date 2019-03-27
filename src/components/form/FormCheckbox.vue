@@ -1,5 +1,5 @@
 <template>
-  <div :class="['inshop-form', isInvalid() ? 'is-invalid' : '']">
+  <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
     <field-checkbox
         :id="fieldId"
         :item="item"
@@ -9,7 +9,7 @@
 
     <label :for="fieldId">{{ label }}</label>
 
-    <div v-if="isInvalid()" class="inshop-errors">{{ errors[property] }}</div>
+    <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
 </template>
 
@@ -44,9 +44,7 @@
     computed: {
       fieldId() {
         return this.id || this.property
-      }
-    },
-    methods: {
+      },
       isInvalid() {
         return Object.keys(this.errors).length > 0 && this.errors[this.property]
       }

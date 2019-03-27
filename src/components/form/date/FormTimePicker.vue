@@ -1,17 +1,17 @@
 <template>
-  <div :class="['form-group', isInvalid ? 'is-invalid' : '']">
-    <label :for="property" class="form-control-label">{{ label }}</label>
+  <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
+    <label :for="fieldId">{{ label }}</label>
 
     <vue-ctk-date-time-picker
-        :class="[{'is-invalid': isInvalid}]"
+        :id="fieldId"
         :value="item[property]"
-        @input="$emit('fieldUpdated', property, $event)"
+        @input="$emit('formUpdated', property, $event)"
         :only-time="true"
-        format="HH:mm"
-        formatted="HH:mm"
+        :format="format"
+        :formatted="format"
     ></vue-ctk-date-time-picker>
 
-    <div v-if="isInvalid" class="help-block">{{ errors[property] }}</div>
+    <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
 </template>
 
@@ -20,11 +20,13 @@
   import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 
   export default {
-    components: {
-      VueCtkDateTimePicker,
-    },
     name: 'FormTimePicker',
+    components: {VueCtkDateTimePicker},
     props: {
+      id: {
+        type: String,
+        default: null
+      },
       item: {
         type: Object,
         required: true
@@ -33,19 +35,25 @@
         type: String,
         required: true
       },
+      format: {
+        type: String,
+        default: 'HH:mm'
+      },
+
       label: {
         type: String,
         default: null
       },
       errors: {
         type: Object,
-        default: function () {
-          return {}
-        }
+        default: () => {}
       }
     },
     computed: {
-      isInvalid () {
+      fieldId() {
+        return this.id || this.property
+      },
+      isInvalid() {
         return Object.keys(this.errors).length > 0 && this.errors[this.property]
       }
     }

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['form-group', isInvalid() ? 'is-invalid' : '']">
+  <div :class="['form-group', isInvalid ? 'is-invalid' : '']">
     <label :for="path" class="form-control-label">{{ label }}</label>
 
     <v-select
@@ -7,12 +7,12 @@
         :id="path"
         :value="item[path]"
         :options="options"
-        :class="['form-control-select2', isInvalid() ? 'is-invalid' : '']"
+        :class="['form-control-select2', isInvalid ? 'is-invalid' : '']"
         label="name"
         @input="$emit('fieldUpdated', property, $event)"
     ></v-select>
 
-    <div v-if="isInvalid()" class="help-block">{{ errors[path] }}</div>
+    <div v-if="isInvalid" class="help-block">{{ errors[path] }}</div>
   </div>
 </template>
 
@@ -53,6 +53,9 @@
       },
       path() {
         return this.multiple ? pluralize(this.property) : this.property;
+      },
+      isInvalid() {
+        return Object.keys(this.errors).length > 0 && this.errors[this.path]
       }
     },
     mounted() {
@@ -61,9 +64,6 @@
     methods: {
       getOptions() {
         this.$store.dispatch(this.optionProperty + '/getItems')
-      },
-      isInvalid() {
-        return Object.keys(this.errors).length > 0 && this.errors[this.path]
       }
     }
   }

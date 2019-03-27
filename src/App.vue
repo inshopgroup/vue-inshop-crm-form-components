@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <form-input :item="item" property="input" label="Input" :errors="errors" @formUpdated="updateValue"></form-input>
-    <form-input type="number" :item="item" property="number" label="Number" :errors="errors" @formUpdated="updateValue"></form-input>
+    <form-number :item="item" property="number" label="Number" :errors="errors" @formUpdated="updateValue"></form-number>
     <form-input type="email" :item="item" property="email" label="email" :errors="errors" @formUpdated="updateValue"></form-input>
     <form-password :item="item" property="password" label="Password" :errors="errors" @formUpdated="updateValue"></form-password>
     <form-textarea :item="item" property="textarea" label="Textarea" :errors="errors" @formUpdated="updateValue"></form-textarea>
@@ -27,10 +27,12 @@
   import FormDatePicker from "./components/form/date/FormDatePicker";
   import FormDateTimePicker from "./components/form/date/FormDateTimePicker";
   import FormSelect from "./components/form/FormSelect";
+  import FormNumber from "./components/form/FormNumber";
 
   export default {
     name: 'app',
     components: {
+      FormNumber,
       FormSelect,
       FormDateTimePicker,
       FormDatePicker,

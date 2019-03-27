@@ -1,44 +1,54 @@
 <template>
-  <div :class="['form-group', isInvalid() ? 'is-invalid' : '']" style="width: 400px;">
-    <label :for="property" class="form-control-label">{{ label }}</label>
+  <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
+    <label :for="fieldId">{{ label }}</label>
 
     <vue-password
-        :id="property"
+        :id="fieldId"
         :value="item[property]"
-        :classes="['form-control', isInvalid() ? 'is-invalid' : '']"
-        :user-inputs="[item.username]"
-        @input="$emit('fieldUpdated', property, $event)"
+        :user-inputs="[item[fieldUsername]]"
+        @input="$emit('formUpdated', property, $event)"
     ></vue-password>
 
-    <div v-if="isInvalid()" class="help-block">{{ errors[property] }}</div>
+    <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
 </template>
 
 <script>
-  import VuePassword from 'vue-password'
+  import VuePassword from "vue-password/src/components/VuePassword";
 
   export default {
     name: 'FormPassword',
     components: {VuePassword},
     props: {
+      id: {
+        type: String,
+        default: null
+      },
       item: {
         type: Object,
-        default: () => {}
-      },
-      errors: {
-        type: Object,
-        default: () => {}
+        required: true
       },
       property: {
         type: String,
-        default: null
+        required: true
+      },
+      fieldUsername: {
+        type: String,
+        default: 'username'
       },
       label: {
         type: String,
         default: null
+      },
+      errors: {
+        type: Object,
+        default: () => {}
       }
     },
-    methods: {
+    computed: {
+      fieldId() {
+        return this.id || this.property
+      },
       isInvalid() {
         return Object.keys(this.errors).length > 0 && this.errors[this.property]
       }

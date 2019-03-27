@@ -1,5 +1,5 @@
 <template>
-  <div :class="['inshop-form', isInvalid() ? 'is-invalid' : '']">
+  <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
     <label :for="fieldId">{{ label }}</label>
 
     <field-teaxtarea
@@ -10,7 +10,7 @@
         @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
     ></field-teaxtarea>
 
-    <div v-if="isInvalid()" class="inshop-errors">{{ errors[property] }}</div>
+    <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
 </template>
 
@@ -18,7 +18,7 @@
   import FieldTeaxtarea from "../field/FieldTextarea";
 
   export default {
-    name: 'FormInput',
+    name: 'FormTextarea',
     components: {FieldTeaxtarea},
     props: {
       id: {
@@ -49,9 +49,7 @@
     computed: {
       fieldId() {
         return this.id || this.property
-      }
-    },
-    methods: {
+      },
       isInvalid() {
         return Object.keys(this.errors).length > 0 && this.errors[this.property]
       }

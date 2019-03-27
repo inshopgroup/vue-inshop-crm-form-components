@@ -6,8 +6,8 @@
         :id="fieldId"
         :item="item"
         :property="property"
-        :type="type"
-        @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
+        type="number"
+        @fieldUpdated="(property, value) => {$emit('formUpdated', property, parseInt(value))}"
     ></field-input>
 
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
@@ -18,7 +18,7 @@
   import FieldInput from "../field/FieldInput";
 
   export default {
-    name: 'FormInput',
+    name: 'FormNumber',
     components: {FieldInput},
     props: {
       id: {
@@ -32,10 +32,6 @@
       property: {
         type: String,
         required: true
-      },
-      type: {
-        type: String,
-        default: 'text'
       },
       label: {
         type: String,
