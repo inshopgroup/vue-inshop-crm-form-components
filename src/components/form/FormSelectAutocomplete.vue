@@ -1,77 +1,89 @@
 <template>
-  <div :class="['form-group', isInvalid ? 'is-invalid' : '']">
-    <label :for="path" class="form-control-label">{{ label }}</label>
+  <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
+    <label :for="fieldId">{{ label }}</label>
+    <span v-if="required">*</span>
 
-    <v-select
-        :multiple="multiple"
-        :id="path"
-        :value="item[path]"
+    <field-select
+        :id="fieldId"
+        :item="item"
+        :property="property"
         :options="options"
-        :class="['form-control-select2', isInvalid ? 'is-invalid' : '']"
-        :label="labelField"
-        @search="loadOptions"
-        @input="$emit('fieldUpdated', property, $event)"
-    ></v-select>
+        :label="optionLabel"
+        :multiple="multiple"
+        @input="$emit('formUpdated', property, $event)"
+        @loadOptions="loadOptions"
+    ></field-select>
 
-    <div v-if="isInvalid" class="help-block">{{ errors[path] }}</div>
+    <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
 </template>
 
 <script>
   import debounce from 'lodash.debounce'
-  import pluralize from "pluralize";
+  import FieldSelect from "../field/FieldSelect";
 
   export default {
     name: 'FormSelectAutocomplete',
+    components: {FieldSelect},
     props: {
-      multiple: {
-        type: Boolean,
-        default: () => false
+      id: {
+        type: String,
+        default: null
       },
       item: {
         type: Object,
-        default: () => {}
-      },
-      errors: {
-        type: Object,
-        default: () => {}
+        required: true
       },
       property: {
         type: String,
         required: true
       },
-      store: {
+      optionLabel: {
         type: String,
+        default: 'name'
+      },
+      optionStore: {
+        type: String,
+        required: true
+      },
+      optionUrl: {
+        type: String,
+        required: true
       },
       searchField: {
         type: String,
         default: 'name'
       },
-      labelField: {
-        type: String,
-        default: 'name'
+      multiple: {
+        type: Boolean,
+        default: false
       },
-      optionProperty: {
-        type: String,
-        required: true
+      errors: {
+        type: Object,
+        default: () => {}
       },
       label: {
         type: String,
         default: null
+      },
+      required: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
       options() {
-        return this.$store.getters[this.storePath + '/items'] || []
+        if (this.$store) {
+          return this.$store.getters[this.optionStore + '/items'] || []
+        }
+
+        return []
       },
-      storePath() {
-        return this.store || this.property
-      },
-      path() {
-        return this.multiple ? pluralize(this.property) : this.property;
+      fieldId() {
+        return this.id || this.property
       },
       isInvalid() {
-        return Object.keys(this.errors).length > 0 && this.errors[this.path]
+        return Object.keys(this.errors).length > 0 && this.errors[this.property]
       }
     },
     methods: {
@@ -79,11 +91,18 @@
         loading(true);
         this.search(loading, keyword, this);
       },
-      search: debounce((loading, keyword, vm) => {
-        vm.$store.dispatch('general/loadingAllow', false)
-        vm.$store.dispatch(vm.storePath + '/getItems', '/' + pluralize(vm.optionProperty) + '?' + vm.searchField + '=' + keyword)
-        loading(false);
-      }, 800),
+      search() {
+        if (this.$store) {
+          debounce(
+            (loading, keyword, vm) => {
+              vm.$store.dispatch('general/loadingAllow', false)
+              vm.$store.dispatch(vm.optionStore + '/getItems', '/' + vm.optionUrl + '?' + vm.searchField + '=' + keyword)
+              loading(false);
+            },
+            800
+          )
+        }
+      }
     }
   }
 </script>

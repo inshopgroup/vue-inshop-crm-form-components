@@ -1,6 +1,7 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
     <label :for="fieldId">{{ label }}</label>
+    <span v-if="required">*</span>
 
     <vue-ctk-date-time-picker
         :id="fieldId"
@@ -39,7 +40,6 @@
         type: String,
         default: 'HH:mm'
       },
-
       label: {
         type: String,
         default: null
@@ -47,6 +47,10 @@
       errors: {
         type: Object,
         default: () => {}
+      },
+      required: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {

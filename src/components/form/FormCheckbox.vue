@@ -7,6 +7,7 @@
         @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
     ></field-checkbox>
 
+    <span v-if="required">*</span>
     <label :for="fieldId">{{ label }}</label>
 
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
@@ -39,6 +40,10 @@
       errors: {
         type: Object,
         default: () => {}
+      },
+      required: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {

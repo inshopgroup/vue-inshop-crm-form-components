@@ -9,9 +9,9 @@
     <form-time-picker :item="item" property="time" label="Time" :errors="errors" @formUpdated="updateValue"></form-time-picker>
     <form-date-picker :item="item" property="date" label="Date" :errors="errors" @formUpdated="updateValue"></form-date-picker>
     <form-date-time-picker :item="item" property="datetime" label="Datetime" :errors="errors" @formUpdated="updateValue"></form-date-time-picker>
-    <!--<form-files :item="item" property="files" label="Fiels" :errors="errors" @formUpdated="updateValue"></form-files>-->
-    <!--<form-select :item="item" property="select" label="Select" :errors="errors" @formUpdated="updateValue"></form-select>-->
-    <!--<form-select-autocomplete :item="item" property="autocomplete" label="Select" :errors="errors" @formUpdated="updateValue"></form-select-autocomplete>-->
+    <form-file :item="item" property="files" form-property="file" route="/file" label="Files" :errors="errors" @formUpdated="updateValue"></form-file>
+    <form-select :item="item" property="select" option-store="someproperty" label="Select" :errors="errors" @formUpdated="updateValue"></form-select>
+    <form-select-autocomplete :item="item" property="autocomplete" option-store="someproperty" optionUrl="someurl" label="Select" :errors="errors" @formUpdated="updateValue"></form-select-autocomplete>
 
     <pre>{{ data }}</pre>
   </div>
@@ -26,7 +26,9 @@
   import FormTimePicker from "./components/form/date/FormTimePicker";
   import FormDatePicker from "./components/form/date/FormDatePicker";
   import FormDateTimePicker from "./components/form/date/FormDateTimePicker";
+  import FormFile from "./components/form/FormFile";
   import FormSelect from "./components/form/FormSelect";
+  import FormSelectAutocomplete from "./components/form/FormSelectAutocomplete";
   import FormNumber from "./components/form/FormNumber";
 
   export default {
@@ -34,9 +36,11 @@
     components: {
       FormNumber,
       FormSelect,
+      FormSelectAutocomplete,
       FormDateTimePicker,
       FormDatePicker,
       FormTimePicker,
+      FormFile,
       FormCheckbox,
       FormTextarea,
       FormPassword,

@@ -1,6 +1,7 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
     <label :for="fieldId">{{ label }}</label>
+    <span v-if="required">*</span>
 
     <field-input
         :id="fieldId"
@@ -40,6 +41,10 @@
       errors: {
         type: Object,
         default: () => {}
+      },
+      required: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {

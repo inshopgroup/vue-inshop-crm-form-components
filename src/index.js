@@ -2,6 +2,7 @@ import FieldCheckbox from './components/field/FieldTextarea'
 import FieldInput from './components/field/FieldTextarea'
 import FieldPassword from './components/field/FieldTextarea'
 import FieldTextarea from './components/field/FieldTextarea'
+import FieldSelect from './components/field/FieldSelect'
 
 import FormTimePicker from './components/form/date/FormTimePicker'
 import FormDatePicker from './components/form/date/FormDatePicker'
@@ -10,27 +11,26 @@ import FormCheckbox from './components/form/FormCheckbox'
 import FormInput from './components/form/FormInput'
 import FormPassword from './components/form/FormPassword'
 import FormTextarea from './components/form/FormTextarea'
-
-// import FormFiles from './components/FormFiles'
-// import FormSelect from './components/FormSelect'
-// import FormSelectAutocomplete from './components/FormSelectAutocomplete'
+import FormSelect from './components/form/FormSelect'
+import FormSelectAutocomplete from './components/form/FormSelectAutocomplete'
+import FormFile from './components/form/FormFile'
 
 const Components = {
   FieldCheckbox,
   FieldInput,
   FieldPassword,
   FieldTextarea,
-
+  FieldSelect,
   FormTimePicker,
   FormDatePicker,
   FormDateTimePicker,
   FormCheckbox,
   FormInput,
   FormPassword,
-  FormTextarea
-  // FormFiles,
-  // FormSelect,
-  // FormSelectAutocomplete,
+  FormTextarea,
+  FormFile,
+  FormSelect,
+  FormSelectAutocomplete,
 }
 
 export default Components

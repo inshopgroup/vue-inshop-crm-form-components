@@ -26,7 +26,6 @@
   "homepage": "https://github.com/inshopgroup/vue-inshop-crm-form-components#readme",
   "dependencies": {
     "lodash.debounce": "^4.0.8",
-    "pluralize": "^7.0.0",
     "vue": "^2.6.6",
     "vue-ctk-date-time-picker": "^2.0.9",
     "vue-password": "^1.2.0",
