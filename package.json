@@ -1,0 +1,71 @@
+{
+  "name": "@inshopgroup/vue-inshop-crm-form-components",
+  "version": "1.0.0",
+  "public": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name vue-inshop-crm-form-components ./src/index.js",
+    "lint": "vue-cli-service lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inshopgroup/vue-inshop-crm-form-components.git"
+  },
+  "keywords": [
+    "Inshop",
+    "CRM",
+    "VUE",
+    "Form",
+    "Components"
+  ],
+  "author": "Maksym Mukovoz <info@inshop.com.ua>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inshopgroup/vue-inshop-crm-form-components/issues"
+  },
+  "homepage": "https://github.com/inshopgroup/vue-inshop-crm-form-components#readme",
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "pluralize": "^7.0.0",
+    "vue": "^2.6.6",
+    "vue-ctk-date-time-picker": "^2.0.9",
+    "vue-password": "^1.2.0",
+    "vue-select": "^2.6.3"
+  },
+  "main": "./dist/vue-inshop-crm-form-components.common.js",
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
