@@ -68,7 +68,7 @@
     height: 38px;
     padding-right: 0;
     padding-left: 10px;
-    border: 1px solid rgba(60,60,60,.26);
+    border: 1px solid rgb(221, 80, 80);
     border-radius: 5px;
     outline: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -79,10 +79,6 @@
 
   #password::placeholder {
     color: #ccc;
-  }
-
-  #password:focus {
-    border: 1px solid #287d66;
   }
 
 </style>

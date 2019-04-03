@@ -89,12 +89,12 @@
     width: 13px;
     height: 13px;
     background: #fff;
-    border: 1px solid rgba(60,60,60,.26);
+    border: 1px solid #000;
     border-radius: 3px;
   }
 
   input[type="checkbox"]:focus + .check__span {
-    /* border-color: #287d66; */
+    
   }
 
   input[type="checkbox"]:checked + .check__span::after {

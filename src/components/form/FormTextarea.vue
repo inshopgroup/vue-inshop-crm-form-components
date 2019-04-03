@@ -69,7 +69,7 @@
     height: 120px;
     padding-left: 10px;
     padding-top: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(221, 80, 80);
     border-radius: 5px;
     outline: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -77,10 +77,6 @@
     line-height: normal;
     color: #ccc;
     resize: none;
-  }
-
-  #textarea:focus {
-    border: 1px solid #287d66;
   }
 
 </style>
