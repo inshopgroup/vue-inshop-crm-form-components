@@ -1,6 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
+    <label class="inshop-label" :for="fieldId">{{ label }}</label>
     <span v-if="required">*</span>
 
     <vue-ctk-date-time-picker
@@ -63,3 +63,28 @@
     }
   }
 </script>
+
+<style>
+/* 
+  #time {
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    border: 1px solid rgba(60,60,60,.26);
+    border-radius: 5px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: #ccc;
+  }
+
+  #time:focus {
+    border: 1px solid rgb(221, 80, 80);
+  }
+
+  #time::placeholder {
+
+  } */
+
+</style>

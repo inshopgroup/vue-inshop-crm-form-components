@@ -1,6 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
+    <label class="inshop-label" :for="fieldId">{{ label }}</label>
     <span v-if="required">*</span>
 
     <field-teaxtarea
@@ -61,3 +61,26 @@
     }
   }
 </script>
+
+<style>
+
+  #textarea {
+    width: 100%;
+    height: 120px;
+    padding-left: 10px;
+    padding-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: #ccc;
+    resize: none;
+  }
+
+  #textarea:focus {
+    border: 1px solid #287d66;
+  }
+
+</style>

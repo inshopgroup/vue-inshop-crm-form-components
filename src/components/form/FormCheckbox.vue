@@ -1,14 +1,18 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <field-checkbox
-        :id="fieldId"
-        :item="item"
-        :property="property"
-        @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
-    ></field-checkbox>
-
+    <label class="check" :for="fieldId">{{ label }}</label>
+      <field-checkbox
+          :class="check__hidden"
+          :id="fieldId"
+          :item="item"
+          :property="property"
+          @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
+      ></field-checkbox>
+      <span class="check__span"></span>
     <span v-if="required">*</span>
-    <label :for="fieldId">{{ label }}</label>
+    <!-- <label class="check" :for="fieldId">{{ label }}</label> -->
+      
+
 
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
@@ -56,3 +60,99 @@
     }
   }
 </script>
+
+<style>
+
+  .inshop-checkbox-label {
+    padding-left: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  .check {
+		position: relative;
+		padding-left: 30px;
+		cursor: pointer;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		font-size: 13px;
+		color: #000;
+		vertical-align: middle;
+		margin-top: 16px;
+  }
+
+  input[type="checkbox"] + .check__span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    background: #fff;
+    border: 1px solid rgba(60,60,60,.26);
+    border-radius: 3px;
+  }
+
+  input[type="checkbox"]:focus + .check__span {
+    /* border-color: #287d66; */
+  }
+
+  input[type="checkbox"]:checked + .check__span::after {
+    content: "";
+    position: absolute;
+    background: url(../../img/checked.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 14px;
+    height: 11px;
+    top: 0;
+    left: 2px;
+  }
+
+  .check__hidden {
+    display: none;
+  }
+
+  .check__hidden:not(:focus).check__hidden:not(:active),
+  input[type="checkbox"].check__hidden,
+  input[type="radio"].check__hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    bottom: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  #checkbox {
+    position: absolute;
+    left: -2px;
+    top: -1px;
+    z-index: 1;
+    opacity: 0;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* #checkbox:not(:focus),
+  #checkbox:not(:active),
+  input[type="checkbox"]#checkbox,
+  input[type="radio"]#checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    bottom: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  } */
+  
+
+</style>

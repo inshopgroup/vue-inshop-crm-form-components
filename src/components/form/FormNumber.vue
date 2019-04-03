@@ -1,9 +1,9 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
+    <label class="inshop-label" :for="fieldId">{{ label }}</label>
     <span v-if="required">*</span>
 
-    <field-input
+    <field-input placeholder="Enter number"
         :id="fieldId"
         :item="item"
         :property="property"
@@ -57,3 +57,28 @@
     }
   }
 </script>
+
+<style>
+
+  #number {
+    width: 100%;
+    height: 38px;
+    padding-left: 10px;
+    border: 1px solid rgba(60,60,60,.26);
+    border-radius: 5px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: #ccc;
+  }
+
+  #number::placeholder {
+    color: #ccc;
+  }
+
+  #number:focus {
+    border: 1px solid #287d66;
+  }
+
+</style>

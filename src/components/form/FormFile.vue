@@ -22,6 +22,13 @@
       <input type="file" :multiple="multiple" @change="fileSelected($event.target.files)"/>
     </div>
 
+    <!-- <div class="upload">
+      <label>
+        <input class="upload-input" type="file" :multiple="multiple" @change="fileSelected($event.target.files)"/>
+        <span class="upload-span">Attach SV</span>
+      </label>
+    </div> -->
+
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
 </template>
@@ -106,3 +113,33 @@
     }
   }
 </script>
+
+<style>
+
+  /* .upload {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 200px;
+  margin-left: 228px;
+  vertical-align: middle;
+  border: 1px solid #000;
+  padding: 29px;
+  text-align: center;
+  transition: background-color .5s ease,color .5s ease;
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-span {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 3px;
+} */
+
+</style>
