@@ -134,26 +134,26 @@
 
   #time {
     height: 38px;
-    border: 1px solid rgb(221, 80, 80);
+    /* border: 1px solid rgb(221, 80, 80); */
   }
 
   #date {
     height: 38px;
-    border: 1px solid rgb(221, 80, 80);
+    /* border: 1px solid rgb(221, 80, 80); */
   }
 
   #datetime {
     height: 38px;
-    border: 1px solid rgb(221, 80, 80);
+    /* border: 1px solid rgb(221, 80, 80); */
   }
 
   #select {
-    border: 1px solid rgb(221, 80, 80);
+    /* border: 1px solid rgb(221, 80, 80); */
     border-radius: 5px;
   }
 
   #autocomplete {
-    border: 1px solid rgb(221, 80, 80);
+    /* border: 1px solid rgb(221, 80, 80); */
     border-radius: 5px;
   }
 
@@ -170,6 +170,10 @@
     /* display: none; */
     position: absolute;
     bottom: -20px;
+  }
+
+  .help-block {
+    color: rgb(221, 80, 80);
   }
 
   
