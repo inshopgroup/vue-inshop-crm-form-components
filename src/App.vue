@@ -95,70 +95,12 @@
 
 <style>
 
-  #app {
+  .app-inner {
     max-width: 600px;
     margin: auto;
     border-radius: 5px;
     border: 1px solid #000;
-  }
-
-  .app-inner {
     padding: 20px 45px 20px 33px;
-  }
-
-  #email {
-    width: 100%;
-    height: 38px;
-    padding-left: 10px;
-    border: 1px solid rgb(221, 80, 80);
-    border-radius: 5px;
-    outline: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: normal;
-    color: #ccc;
-  }
-
-  #email::placeholder {
-    color: #ccc;
-  }
-
-  .VuePassword__Meter {
-    margin: .2rem auto 0;
-    padding-left: .4rem;
-  }
-
-  .VuePassword__Meter path {
-    stroke-width: 1px;
-  }
-
-  #time {
-    height: 38px;
-    /* border: 1px solid rgb(221, 80, 80); */
-  }
-
-  #date {
-    height: 38px;
-    /* border: 1px solid rgb(221, 80, 80); */
-  }
-
-  #datetime {
-    height: 38px;
-    /* border: 1px solid rgb(221, 80, 80); */
-  }
-
-  #select {
-    /* border: 1px solid rgb(221, 80, 80); */
-    border-radius: 5px;
-  }
-
-  #autocomplete {
-    /* border: 1px solid rgb(221, 80, 80); */
-    border-radius: 5px;
-  }
-
-  .v-select.searchable .dropdown-toggle {
-    height: 38px;
   }
 
   .inshop-form {
@@ -166,15 +108,25 @@
     position: relative;
   }
 
+  .inshop-label {
+    margin-bottom: 5px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: normal;
+  }
+
   .inshop-errors {
-    /* display: none; */
     position: absolute;
     bottom: -20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: rgb(221, 80, 80);
   }
 
   .help-block {
     color: rgb(221, 80, 80);
   }
-
   
 </style>

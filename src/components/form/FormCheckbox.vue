@@ -10,10 +10,6 @@
       ></field-checkbox>
       <span class="check__span"></span>
     <span v-if="required">*</span>
-    <!-- <label class="check" :for="fieldId">{{ label }}</label> -->
-      
-
-
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
 </template>
@@ -93,10 +89,6 @@
     border-radius: 3px;
   }
 
-  input[type="checkbox"]:focus + .check__span {
-    
-  }
-
   input[type="checkbox"]:checked + .check__span::after {
     content: "";
     position: absolute;
@@ -137,22 +129,5 @@
     border: none;
     cursor: pointer;
   }
-
-  /* #checkbox:not(:focus),
-  #checkbox:not(:active),
-  input[type="checkbox"]#checkbox,
-  input[type="radio"]#checkbox {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    bottom: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-  } */
-  
 
 </style>

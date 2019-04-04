@@ -3,7 +3,8 @@
     <label class="inshop-label" :for="fieldId">{{ label }}</label>
     <span v-if="required">*</span>
 
-    <field-input placeholder="Enter number"
+    <field-input 
+        placeholder="Enter number"
         :id="fieldId"
         :item="item"
         :property="property"
@@ -70,7 +71,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: normal;
-    color: #ccc;
+    color: #000;
   }
 
   #number::placeholder {

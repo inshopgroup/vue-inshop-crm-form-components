@@ -65,26 +65,9 @@
 </script>
 
 <style>
-/* 
+
   #time {
-    width: 100%;
-    height: 30px;
-    padding-left: 10px;
-    border: 1px solid rgba(60,60,60,.26);
-    border-radius: 5px;
-    outline: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: normal;
-    color: #ccc;
+    height: 38px;
   }
-
-  #time:focus {
-    border: 1px solid rgb(221, 80, 80);
-  }
-
-  #time::placeholder {
-
-  } */
 
 </style>

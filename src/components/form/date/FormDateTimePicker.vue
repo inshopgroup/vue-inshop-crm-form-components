@@ -62,3 +62,11 @@
     }
   }
 </script>
+
+<style>
+
+  #datetime {
+    height: 38px;
+  }
+
+</style>

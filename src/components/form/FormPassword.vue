@@ -3,7 +3,8 @@
     <label class="inshop-label" :for="fieldId">{{ label }}</label>
     <span v-if="required">*</span>
 
-    <vue-password placeholder="Enter password"
+    <vue-password 
+        placeholder="Enter password"
         :id="fieldId"
         :value="item[property]"
         :user-inputs="[item[fieldUsername]]"
@@ -74,11 +75,20 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: normal;
-    color: #ccc;
+    color: #000;
   }
 
   #password::placeholder {
     color: #ccc;
+  }
+
+  .VuePassword__Meter {
+    margin: .2rem auto 0;
+    padding-left: .4rem;
+  }
+
+  .VuePassword__Meter path {
+    stroke-width: 1px;
   }
 
 </style>

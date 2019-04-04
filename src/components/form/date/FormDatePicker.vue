@@ -63,3 +63,11 @@
     }
   }
 </script>
+
+<style>
+
+  #date {
+    height: 38px;
+  }
+
+</style>

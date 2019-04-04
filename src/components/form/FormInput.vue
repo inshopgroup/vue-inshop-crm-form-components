@@ -3,7 +3,8 @@
     <label class="inshop-label" :for="fieldId">{{ label }}</label>
     <span v-if="required">*</span>
 
-    <field-input placeholder="Input"
+    <field-input 
+        placeholder="Fill in the field"
         :id="fieldId"
         :item="item"
         :property="property"
@@ -64,27 +65,6 @@
 
 <style>
 
-  .inshop-errors {
-    /* display: none; */
-    margin-top: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: normal;
-    color: rgb(221, 80, 80);
-  }
-
-  .inshop-label {
-    margin-bottom: 5px;
-    display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    line-height: normal;
-  }
-
-  .inshop-form {
-    margin-bottom: 15px;
-  }
-
   #input {
     width: 100%;
     height: 38px;
@@ -99,6 +79,23 @@
   }
 
   #input::placeholder {
+    color: #ccc;
+  }
+
+  #email {
+    width: 100%;
+    height: 38px;
+    padding-left: 10px;
+    border: 1px solid rgb(221, 80, 80);
+    border-radius: 5px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: #000;
+  }
+
+  #email::placeholder {
     color: #ccc;
   }
 

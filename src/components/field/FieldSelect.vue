@@ -44,3 +44,11 @@
     }
   }
 </script>
+
+<style>
+
+  .v-select.searchable .dropdown-toggle {
+    height: 38px;
+  }
+
+</style>
