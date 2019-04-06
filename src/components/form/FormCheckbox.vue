@@ -59,6 +59,15 @@
 
 <style>
 
+  .inshop-errors {
+    position: absolute;
+    bottom: -20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: rgb(221, 80, 80);
+  }
+
   .inshop-checkbox-label {
     padding-left: 1rem;
     font-family: Arial, Helvetica, sans-serif;

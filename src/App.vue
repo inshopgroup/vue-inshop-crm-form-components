@@ -21,6 +21,8 @@
 
 <script>
   import Vue from 'vue'
+  // import sassStyles from "./sass/style.scss";
+  // import "./sass/style.scss";
   import FormInput from "./components/form/FormInput";
   import FormPassword from "./components/form/FormPassword";
   import FormTextarea from "./components/form/FormTextarea";
@@ -48,6 +50,11 @@
       FormPassword,
       FormInput
     },
+    // metaInfo: {
+    //   link: [
+    //     { rel: 'stylesheet', href: './sass/style.scss' },
+    //   ]
+    // },
     data() {
       return {
         item: {
@@ -106,27 +113,6 @@
   .inshop-form {
     margin-bottom: 30px;
     position: relative;
-  }
-
-  .inshop-label {
-    margin-bottom: 5px;
-    display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    line-height: normal;
-  }
-
-  .inshop-errors {
-    position: absolute;
-    bottom: -20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: normal;
-    color: rgb(221, 80, 80);
-  }
-
-  .help-block {
-    color: rgb(221, 80, 80);
   }
   
 </style>

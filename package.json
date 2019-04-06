@@ -27,6 +27,7 @@
   "dependencies": {
     "check-node-version": "^3.3.0",
     "lodash.debounce": "^4.0.8",
+    "sass-loader": "^7.1.0",
     "vue": "^2.6.10",
     "vue-ctk-date-time-picker": "^2.0.9",
     "vue-password": "^1.2.0",

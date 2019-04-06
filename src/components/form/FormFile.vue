@@ -106,3 +106,16 @@
     }
   }
 </script>
+
+<style>
+
+  .inshop-errors {
+    position: absolute;
+    bottom: -20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: rgb(221, 80, 80);
+  }
+
+</style>

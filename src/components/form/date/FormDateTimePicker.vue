@@ -65,6 +65,23 @@
 
 <style>
 
+  .inshop-label {
+    margin-bottom: 5px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: normal;
+  }
+
+  .inshop-errors {
+    position: absolute;
+    bottom: -20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: rgb(221, 80, 80);
+  }
+
   #datetime {
     height: 38px;
   }
