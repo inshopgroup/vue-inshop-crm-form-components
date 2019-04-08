@@ -57,7 +57,12 @@
   }
 </script>
 
-<style>
+<style scoped>
+
+  .inshop-form {
+    margin-bottom: 30px;
+    position: relative;
+  }
 
   .inshop-errors {
     position: absolute;

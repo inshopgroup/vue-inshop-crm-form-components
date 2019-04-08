@@ -100,7 +100,7 @@
   }
 </script>
 
-<style>
+<style scoped>
 
   .app-inner {
     max-width: 600px;
@@ -108,11 +108,6 @@
     border-radius: 5px;
     border: 1px solid #000;
     padding: 20px 45px 20px 33px;
-  }
-
-  .inshop-form {
-    margin-bottom: 30px;
-    position: relative;
   }
   
 </style>

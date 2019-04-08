@@ -59,7 +59,12 @@
   }
 </script>
 
-<style>
+<style scoped>
+
+  .inshop-form {
+    margin-bottom: 30px;
+    position: relative;
+  }
 
   .inshop-label {
     margin-bottom: 5px;
