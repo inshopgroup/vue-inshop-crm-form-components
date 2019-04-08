@@ -74,13 +74,14 @@
     margin-bottom: 5px;
     display: block;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     line-height: normal;
+    color: #000;
   }
 
   .inshop-errors {
     position: absolute;
-    bottom: -20px;
+    bottom: -18px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: normal;

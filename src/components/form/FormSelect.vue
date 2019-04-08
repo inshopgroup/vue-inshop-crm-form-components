@@ -13,7 +13,7 @@
         @input="$emit('formUpdated', property, $event)"
     ></field-select>
 
-    <div v-if="isInvalid" class="help-block">{{ errors[property] }}</div>
+    <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
 </template>
 
@@ -100,20 +100,17 @@
     margin-bottom: 5px;
     display: block;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     line-height: normal;
+    color: #000;
   }
 
   .inshop-errors {
     position: absolute;
-    bottom: -20px;
+    bottom: -18px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: normal;
-    color: rgb(221, 80, 80);
-  }
-
-  .help-block {
     color: rgb(221, 80, 80);
   }
 

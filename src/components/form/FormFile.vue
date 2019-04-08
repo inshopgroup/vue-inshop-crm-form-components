@@ -1,6 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
+    <label class="inshop-label" :for="fieldId">{{ label }}</label>
     <span v-if="required">*</span>
 
     <div v-if="item[property]">
@@ -114,9 +114,18 @@
     position: relative;
   }
 
+  .inshop-label {
+    margin-bottom: 5px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: normal;
+    color: #000;
+  }
+
   .inshop-errors {
     position: absolute;
-    bottom: -20px;
+    bottom: -18px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: normal;

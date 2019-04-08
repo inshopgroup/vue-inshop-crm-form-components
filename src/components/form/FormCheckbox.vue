@@ -2,7 +2,6 @@
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
     <label class="check" :for="fieldId">{{ label }}</label>
       <field-checkbox
-          :class="check__hidden"
           :id="fieldId"
           :item="item"
           :property="property"
@@ -66,7 +65,7 @@
 
   .inshop-errors {
     position: absolute;
-    bottom: -20px;
+    bottom: -18px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: normal;
@@ -81,15 +80,14 @@
   }
 
   .check {
+    margin-top: 16px;
+    padding-left: 23px;
 		position: relative;
-		padding-left: 30px;
 		cursor: pointer;
 		font-family: Arial, Helvetica, sans-serif;
-		font-weight: bold;
-		font-size: 13px;
+		font-size: 16px;
+    line-height: normal;
 		color: #000;
-		vertical-align: middle;
-		margin-top: 16px;
   }
 
   input[type="checkbox"] + .check__span {
@@ -111,8 +109,9 @@
     background-position: center center;
     width: 14px;
     height: 11px;
-    top: 0;
-    left: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
   }
 
   .check__hidden {
