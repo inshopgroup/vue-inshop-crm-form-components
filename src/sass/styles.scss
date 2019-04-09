@@ -1,0 +1,165 @@
+.inshop-form {
+  padding: 10px 0;
+  position: relative;
+
+  label {
+    margin-bottom: 5px;
+    display: block;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+    color: #333;
+
+    &.checkbox {
+      display: inline-block;
+      max-width: 100%;
+      margin-left: 5px;
+      font-weight: 700;
+    }
+  }
+
+  input {
+    &[type="text"], &[type="number"], &[type="email"], &[type="password"] {
+      width: 100%;
+      height: 38px;
+      box-sizing: border-box;
+      padding: 0 10px;
+      border: 1px solid #d2d6de;
+      outline: none;
+      font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: normal;
+      color: #555;
+
+      &:focus {
+        border: 1px solid #3c8dbc;
+      }
+
+      &::placeholder {
+        color: #ccc;
+      }
+    }
+    &[type="file"] {
+      font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #555;
+      box-sizing: border-box;
+      border: none;
+      padding-left: 0;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 120px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #d2d6de;
+    outline: none;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: #555;
+
+    &:focus {
+      border: 1px solid #3c8dbc;
+    }
+
+    &::placeholder {
+      color: #ccc;
+    }
+  }
+
+  .v-select {
+    &.searchable .dropdown-toggle {
+      width: 100%;
+      height: 38px;
+      box-sizing: border-box;
+      border: 1px solid #d2d6de;
+      border-radius: 0;
+      outline: none;
+      color: #555;
+    }
+
+    .open-indicator:before {
+      border-color: #555;
+    }
+  }
+
+  .date-time-picker {
+    input.field-input {
+      width: 100%;
+      height: 38px;
+      min-height: 38px;
+      box-sizing: border-box;
+      border: 1px solid #d2d6de;
+      border-radius: 0;
+      outline: none;
+    }
+  }
+
+  .VuePassword__Meter {
+    margin: .2rem auto 0;
+    padding-left: 0;
+
+    path {
+      stroke-width: 1px;
+    }
+  }
+
+  .VuePassword__Message {
+    position: absolute;
+    right: 0;
+    bottom: -23px;
+  }
+
+  &.is-invalid {
+    label {
+      color: rgb(221, 80, 80);
+    }
+
+    .inshop-errors {
+      margin-top: 5px;
+      font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      line-height: normal;
+      color: rgb(221, 80, 80);
+    }
+
+    input {
+      &[type="text"], &[type="number"], &[type="email"], &[type="password"] {
+        border: 1px solid rgb(221, 80, 80);
+      }
+    }
+
+    textarea {
+      border: 1px solid rgb(221, 80, 80);
+    }
+
+    .v-select {
+      &.searchable .dropdown-toggle {
+        border: 1px solid rgb(221, 80, 80);
+      }
+
+      .open-indicator:before {
+        border-color: rgb(221, 80, 80);
+      }
+    }
+  }
+
+  .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+
+    th {
+      border-bottom: 5px solid #f4f4f4;
+      padding: 8px;
+    }
+    td {
+      border-bottom: 1px solid #f4f4f4;
+      padding: 8px;
+    }
+  }
+}

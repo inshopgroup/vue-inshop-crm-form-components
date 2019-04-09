@@ -1,9 +1,9 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
-    <span v-if="required">*</span>
+    <label :for="fieldId"><span v-if="required">* </span>{{ label }}</label>
 
     <field-teaxtarea
+        :placeholder="placeholder"
         :id="fieldId"
         :item="item"
         :property="property"
@@ -17,6 +17,7 @@
 
 <script>
   import FieldTeaxtarea from "../field/FieldTextarea";
+  import "../../sass/styles.scss"
 
   export default {
     name: 'FormTextarea',
@@ -39,6 +40,10 @@
         default: 5
       },
       label: {
+        type: String,
+        default: null
+      },
+      placeholder: {
         type: String,
         default: null
       },

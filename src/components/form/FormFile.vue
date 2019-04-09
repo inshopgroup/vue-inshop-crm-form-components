@@ -1,15 +1,28 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
-    <span v-if="required">*</span>
+    <label :for="fieldId"><span v-if="required">* </span>{{ label }}</label>
 
     <div v-if="item[property]">
       <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th>Preview</th>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Mime type</th>
+          <th>Create at</th>
+          <th></th>
+        </tr>
+        </thead>
         <tbody>
         <tr v-for="file in item[property]" :key="file.id">
           <td>
-            {{ file.originalName }}
+            Preview
           </td>
+          <td>{{ file.originalName }}</td>
+          <td>{{ filesize(file.size) }}</td>
+          <td>{{ file.mimeType }}</td>
+          <td>{{ moment(file.createdAt).format('DD-MM-YYYY HH:mm') }}</td>
           <td>
             <button type="button" @click.prevent="deleteFile(file.id)">Delete</button>
           </td>
@@ -27,6 +40,10 @@
 </template>
 
 <script>
+  import "../../sass/styles.scss"
+  import filesize from "filesize"
+  import moment from "moment"
+
   export default {
     name: 'FormFile',
     props: {
@@ -71,6 +88,12 @@
         default: false
       }
     },
+    data() {
+      return {
+        filesize: filesize,
+        moment: moment,
+      }
+    },
     computed: {
       fieldId() {
         return this.id || this.property
@@ -100,7 +123,7 @@
       },
       deleteFile(id) {
         if (confirm('Are you sure?')) {
-          this.$emit('formFileDeleted', id)
+          this.$emit('formFileDeleted', this.property, id)
         }
       }
     }

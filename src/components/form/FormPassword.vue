@@ -1,9 +1,9 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
-    <span v-if="required">*</span>
+    <label :for="fieldId"><span v-if="required">* </span>{{ label }}</label>
 
     <vue-password
+        :placeholder="placeholder"
         :id="fieldId"
         :value="item[property]"
         :user-inputs="[item[fieldUsername]]"
@@ -16,6 +16,7 @@
 
 <script>
   import VuePassword from "vue-password/src/components/VuePassword";
+  import "../../sass/styles.scss"
 
   export default {
     name: 'FormPassword',
@@ -38,6 +39,10 @@
         default: 'username'
       },
       label: {
+        type: String,
+        default: null
+      },
+      placeholder: {
         type: String,
         default: null
       },

@@ -1,7 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
-    <span v-if="required">*</span>
+    <label :for="fieldId"><span v-if="required">* </span>{{ label }}</label>
 
     <vue-ctk-date-time-picker
         :id="fieldId"

@@ -15,6 +15,13 @@ module.exports = {
   plugins: [
     'vue',
   ],
+  // css: {
+  //   loaderOptions: {
+  //     sass: {
+  //       data: `@import "@/sass/style.scss";`
+  //     }
+  //   }
+  // },
   rules: {
   },
 };
