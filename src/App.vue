@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div class="app-inner">
-      <form-input :item="item" property="input" label="Input" :required="true" :errors="errors" @formUpdated="updateValue"></form-input>
-      <form-number :item="item" property="number" label="Number" :required="true" :errors="errors" @formUpdated="updateValue"></form-number>
-      <form-input placeholder="Enter email" type="email" :item="item" :required="true" property="email" label="email" :errors="errors" @formUpdated="updateValue"></form-input>
-      <form-password :item="item" property="password" label="Password" :required="true" :errors="errors" @formUpdated="updateValue"></form-password>
-      <form-textarea :item="item" property="textarea" label="Textarea" :required="true" :errors="errors" @formUpdated="updateValue"></form-textarea>
+      <form-input :item="item" property="input" label="Input" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-input>
+      <form-number :item="item" property="number" label="Number" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-number>
+      <form-input type="email" :item="item" :required="true" property="email" label="email" placeholder="some placeholder" :errors="errors" @formUpdated="updateValue"></form-input>
+      <form-password :item="item" property="password" label="Password" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-password>
+      <form-textarea :item="item" property="textarea" label="Textarea" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-textarea>
       <form-checkbox :item="item" property="checkbox" label="Checkbox" :required="true" :errors="errors" @formUpdated="updateValue"></form-checkbox>
       <form-time-picker :item="item" property="time" label="Time" :required="true" :errors="errors" @formUpdated="updateValue"></form-time-picker>
       <form-date-picker :item="item" property="date" label="Date" :required="true" :errors="errors" @formUpdated="updateValue"></form-date-picker>
@@ -60,7 +60,16 @@
           time: null,
           date: null,
           datetime: null,
-          files: null,
+          files: [
+            {
+              id: 1,
+              originalName: 'file1.txt'
+            },
+            {
+              id: 2,
+              originalName: 'file2.txt'
+            }
+          ],
           select: null,
           autocomplete: null,
         },
@@ -94,13 +103,11 @@
 </script>
 
 <style>
-
   .app-inner {
     max-width: 600px;
     margin: auto;
     border-radius: 5px;
-    border: 1px solid #000;
+    border: 1px solid #ccc;
     padding: 20px 30px 20px 30px;
   }
-  
 </style>

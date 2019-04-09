@@ -1,14 +1,15 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
-      <field-checkbox
-          :id="fieldId"
-          :item="item"
-          :property="property"
-          @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
-      ></field-checkbox>
-      <span class="check__span"></span>
-    <span v-if="required">*</span>
+    <label :for="fieldId"><span v-if="required">* </span>{{ label }}</label>
+
+    <field-checkbox
+        :id="fieldId"
+        :item="item"
+        :property="property"
+        @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
+    ></field-checkbox>
+    <span class="check__span"></span>
+
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
 </template>
@@ -57,9 +58,8 @@
 </script>
 
 <style scoped>
-
   .inshop-form {
-    margin-bottom: 30px;
+    padding: 10px 0;
     position: relative;
   }
 

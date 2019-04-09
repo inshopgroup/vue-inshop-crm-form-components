@@ -1,7 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
-    <span v-if="required">*</span>
+    <label :for="fieldId"><span v-if="required">* </span>{{ label }}</label>
 
     <div v-if="item[property]">
       <table class="table table-striped table-hover">
@@ -19,7 +18,7 @@
     </div>
 
     <div>
-      <input type="file" :multiple="multiple" @change="fileSelected($event.target.files)"/>
+      <input type="file" :multiple="multiple" @change="fileSelected($event.target.files)" />
     </div>
 
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
@@ -108,42 +107,38 @@
 </script>
 
 <style scoped>
-
   .inshop-form {
-    margin-bottom: 30px;
+    padding: 10px 0;
     position: relative;
   }
 
   .inshop-form label {
     margin-bottom: 5px;
     display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
     line-height: normal;
-    color: #000;
+    color: #333;
   }
 
   .inshop-form input {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #555;
     box-sizing: border-box;
     border: none;
-    border-radius: none;
     padding-left: 0;
   }
-
-  .inshop-form.is-invalid input {
-    border: none;
-  }
-
   .inshop-form.is-invalid label {
     color: rgb(221, 80, 80);
   }
 
   .inshop-form.is-invalid .inshop-errors {
     margin-top: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
     line-height: normal;
     color: rgb(221, 80, 80);
   }
-
 </style>

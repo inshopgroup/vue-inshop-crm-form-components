@@ -1,10 +1,9 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
-    <span v-if="required">*</span>
+    <label :for="fieldId"><span v-if="required">* </span>{{ label }}</label>
 
-    <field-input 
-        placeholder="Fill in the field"
+    <field-input
+        :placeholder="placeholder"
         :id="fieldId"
         :item="item"
         :property="property"
@@ -43,6 +42,10 @@
         type: String,
         default: null
       },
+      placeholder: {
+        type: String,
+        default: null
+      },
       errors: {
         type: Object,
         default: () => {}
@@ -64,19 +67,19 @@
 </script>
 
 <style scoped>
-
   .inshop-form {
-    margin-bottom: 30px;
+    padding: 10px 0;
     position: relative;
   }
 
   .inshop-form label {
     margin-bottom: 5px;
     display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
     line-height: normal;
-    color: #000;
+    color: #333;
   }
 
   .inshop-form input {
@@ -84,13 +87,16 @@
     height: 38px;
     box-sizing: border-box;
     padding: 0 10px;
-    border: 1px solid #000;
-    border-radius: 5px;
+    border: 1px solid #d2d6de;
     outline: none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: normal;
-    color: #000;
+    color: #555;
+  }
+
+  .inshop-form input:focus {
+    border: 1px solid #3c8dbc;
   }
 
   .inshop-form input::placeholder {
@@ -103,8 +109,8 @@
 
   .inshop-form.is-invalid .inshop-errors {
     margin-top: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
     line-height: normal;
     color: rgb(221, 80, 80);
   }
@@ -112,6 +118,4 @@
   .inshop-form.is-invalid input {
     border: 1px solid rgb(221, 80, 80);
   }
-
 </style>
-

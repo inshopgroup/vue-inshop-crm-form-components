@@ -1,7 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
-    <span v-if="required">*</span>
+    <label :for="fieldId"><span v-if="required">* </span>{{ label }}</label>
 
     <field-select
         :id="fieldId"
@@ -108,9 +107,8 @@
 </script>
 
 <style scoped>
-
   .inshop-form {
-    margin-bottom: 30px;
+    padding: 10px 0;
     position: relative;
   }
 
@@ -133,10 +131,6 @@
     line-height: normal;
     color: rgb(221, 80, 80);
   }
-
-</style>
-
-<style>
 
   .inshop-form .v-select.searchable .dropdown-toggle {
     width: 100%;
