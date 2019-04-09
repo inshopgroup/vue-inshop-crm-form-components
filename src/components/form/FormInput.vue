@@ -17,6 +17,7 @@
 
 <script>
   import FieldInput from "../field/FieldInput";
+  import "../../sass/styles.scss"
 
   export default {
     name: 'FormInput',
@@ -65,57 +66,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .inshop-form {
-    padding: 10px 0;
-    position: relative;
-  }
-
-  .inshop-form label {
-    margin-bottom: 5px;
-    display: block;
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: normal;
-    color: #333;
-  }
-
-  .inshop-form input {
-    width: 100%;
-    height: 38px;
-    box-sizing: border-box;
-    padding: 0 10px;
-    border: 1px solid #d2d6de;
-    outline: none;
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: normal;
-    color: #555;
-  }
-
-  .inshop-form input:focus {
-    border: 1px solid #3c8dbc;
-  }
-
-  .inshop-form input::placeholder {
-    color: #ccc;
-  }
-
-  .inshop-form.is-invalid label {
-    color: rgb(221, 80, 80);
-  }
-
-  .inshop-form.is-invalid .inshop-errors {
-    margin-top: 5px;
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    line-height: normal;
-    color: rgb(221, 80, 80);
-  }
-
-  .inshop-form.is-invalid input {
-    border: 1px solid rgb(221, 80, 80);
-  }
-</style>

@@ -44,12 +44,3 @@
     }
   }
 </script>
-
-<style scoped>
-
-  .inshop-form {
-    margin-bottom: 30px;
-    position: relative;
-  }
-
-</style>

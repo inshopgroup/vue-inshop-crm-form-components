@@ -25,9 +25,7 @@
   },
   "homepage": "https://github.com/inshopgroup/vue-inshop-crm-form-components#readme",
   "dependencies": {
-    "check-node-version": "^3.3.0",
     "lodash.debounce": "^4.0.8",
-    "sass-loader": "^7.1.0",
     "vue": "^2.6.10",
     "vue-ctk-date-time-picker": "^2.0.9",
     "vue-password": "^1.2.0",
@@ -43,6 +41,8 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-vue": "^5.2.2",
+    "sass-loader": "^7.1.0",
+    "node-sass": "^4.11.0",
     "vue-template-compiler": "^2.5.21"
   },
   "files": [

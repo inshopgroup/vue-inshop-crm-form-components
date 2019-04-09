@@ -7,6 +7,9 @@
         <tbody>
         <tr v-for="file in item[property]" :key="file.id">
           <td>
+            Preview
+          </td>
+          <td>
             {{ file.originalName }}
           </td>
           <td>
@@ -107,38 +110,38 @@
 </script>
 
 <style scoped>
-  .inshop-form {
-    padding: 10px 0;
-    position: relative;
-  }
+  /*.inshop-form {*/
+  /*  padding: 10px 0;*/
+  /*  position: relative;*/
+  /*}*/
 
-  .inshop-form label {
-    margin-bottom: 5px;
-    display: block;
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: normal;
-    color: #333;
-  }
+  /*.inshop-form label {*/
+  /*  margin-bottom: 5px;*/
+  /*  display: block;*/
+  /*  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  /*  font-size: 14px;*/
+  /*  font-weight: 700;*/
+  /*  line-height: normal;*/
+  /*  color: #333;*/
+  /*}*/
 
-  .inshop-form input {
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #555;
-    box-sizing: border-box;
-    border: none;
-    padding-left: 0;
-  }
-  .inshop-form.is-invalid label {
-    color: rgb(221, 80, 80);
-  }
+  /*.inshop-form input {*/
+  /*  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  /*  font-size: 14px;*/
+  /*  color: #555;*/
+  /*  box-sizing: border-box;*/
+  /*  border: none;*/
+  /*  padding-left: 0;*/
+  /*}*/
+  /*.inshop-form.is-invalid label {*/
+  /*  color: rgb(221, 80, 80);*/
+  /*}*/
 
-  .inshop-form.is-invalid .inshop-errors {
-    margin-top: 5px;
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    line-height: normal;
-    color: rgb(221, 80, 80);
-  }
+  /*.inshop-form.is-invalid .inshop-errors {*/
+  /*  margin-top: 5px;*/
+  /*  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  /*  font-size: 12px;*/
+  /*  line-height: normal;*/
+  /*  color: rgb(221, 80, 80);*/
+  /*}*/
 </style>

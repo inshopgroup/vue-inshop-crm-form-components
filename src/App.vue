@@ -106,7 +106,6 @@
   .app-inner {
     max-width: 600px;
     margin: auto;
-    border-radius: 5px;
     border: 1px solid #ccc;
     padding: 20px 30px 20px 30px;
   }
