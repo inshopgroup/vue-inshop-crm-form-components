@@ -16,6 +16,7 @@
 
 <script>
   import VuePassword from "vue-password/src/components/VuePassword";
+  import "../../sass/styles.scss"
 
   export default {
     name: 'FormPassword',

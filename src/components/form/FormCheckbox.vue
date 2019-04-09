@@ -15,6 +15,7 @@
 
 <script>
   import FieldCheckbox from "../field/FieldCheckbox";
+  import "../../sass/styles.scss"
 
   export default {
     name: 'FormCheckbox',

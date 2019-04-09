@@ -17,6 +17,7 @@
 
 <script>
   import FieldInput from "../field/FieldInput";
+  import "../../sass/styles.scss"
 
   export default {
     name: 'FormNumber',

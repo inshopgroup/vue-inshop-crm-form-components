@@ -17,6 +17,7 @@
 
 <script>
   import FieldTeaxtarea from "../field/FieldTextarea";
+  import "../../sass/styles.scss"
 
   export default {
     name: 'FormTextarea',

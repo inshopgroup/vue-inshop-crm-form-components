@@ -4,14 +4,25 @@
 
     <div v-if="item[property]">
       <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th>Preview</th>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Mime type</th>
+          <th>Create at</th>
+          <th></th>
+        </tr>
+        </thead>
         <tbody>
         <tr v-for="file in item[property]" :key="file.id">
           <td>
             Preview
           </td>
-          <td>
-            {{ file.originalName }}
-          </td>
+          <td>{{ file.originalName }}</td>
+          <td>{{ filesize(file.size) }}</td>
+          <td>{{ file.mimeType }}</td>
+          <td>{{ moment(file.createdAt).format('DD-MM-YYYY HH:mm') }}</td>
           <td>
             <button type="button" @click.prevent="deleteFile(file.id)">Delete</button>
           </td>
@@ -21,7 +32,7 @@
     </div>
 
     <div>
-      <input type="file" :multiple="multiple" @change="fileSelected($event.target.files)" />
+      <input type="file" :multiple="multiple" @change="fileSelected($event.target.files)"/>
     </div>
 
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
@@ -29,6 +40,10 @@
 </template>
 
 <script>
+  import "../../sass/styles.scss"
+  import filesize from "filesize"
+  import moment from "moment"
+
   export default {
     name: 'FormFile',
     props: {
@@ -73,6 +88,12 @@
         default: false
       }
     },
+    data() {
+      return {
+        filesize: filesize,
+        moment: moment,
+      }
+    },
     computed: {
       fieldId() {
         return this.id || this.property
@@ -102,46 +123,9 @@
       },
       deleteFile(id) {
         if (confirm('Are you sure?')) {
-          this.$emit('formFileDeleted', id)
+          this.$emit('formFileDeleted', this.property, id)
         }
       }
     }
   }
 </script>
-
-<style scoped>
-  /*.inshop-form {*/
-  /*  padding: 10px 0;*/
-  /*  position: relative;*/
-  /*}*/
-
-  /*.inshop-form label {*/
-  /*  margin-bottom: 5px;*/
-  /*  display: block;*/
-  /*  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  /*  font-size: 14px;*/
-  /*  font-weight: 700;*/
-  /*  line-height: normal;*/
-  /*  color: #333;*/
-  /*}*/
-
-  /*.inshop-form input {*/
-  /*  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  /*  font-size: 14px;*/
-  /*  color: #555;*/
-  /*  box-sizing: border-box;*/
-  /*  border: none;*/
-  /*  padding-left: 0;*/
-  /*}*/
-  /*.inshop-form.is-invalid label {*/
-  /*  color: rgb(221, 80, 80);*/
-  /*}*/
-
-  /*.inshop-form.is-invalid .inshop-errors {*/
-  /*  margin-top: 5px;*/
-  /*  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-  /*  font-size: 12px;*/
-  /*  line-height: normal;*/
-  /*  color: rgb(221, 80, 80);*/
-  /*}*/
-</style>

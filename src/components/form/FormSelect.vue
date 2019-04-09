@@ -18,6 +18,7 @@
 
 <script>
   import FieldSelect from "../field/FieldSelect";
+  import "../../sass/styles.scss"
 
   export default {
     name: 'FormSelect',

@@ -10,7 +10,7 @@
       <form-time-picker :item="item" property="time" label="Time" :required="true" :errors="errors" @formUpdated="updateValue"></form-time-picker>
       <form-date-picker :item="item" property="date" label="Date" :required="true" :errors="errors" @formUpdated="updateValue"></form-date-picker>
       <form-date-time-picker :item="item" property="datetime" label="Datetime" :required="true" :errors="errors" @formUpdated="updateValue"></form-date-time-picker>
-      <form-file :item="item" property="files" form-property="file" :required="true" route="/file" label="Files" :errors="errors" @formUpdated="updateValue"></form-file>
+      <form-file :item="item" property="files" form-property="file" :required="true" route="/file" label="Files" :errors="errors" @formFileDeleted="formFileDeleted"></form-file>
       <form-select :item="item" property="select" option-store="someproperty" label="Select" :required="true" :errors="errors" @formUpdated="updateValue"></form-select>
       <form-select-autocomplete :item="item" property="autocomplete" option-store="someproperty" optionUrl="someurl" label="Select" :required="true" :errors="errors" @formUpdated="updateValue"></form-select-autocomplete>
 
@@ -63,10 +63,14 @@
           files: [
             {
               id: 1,
+              size: 1234235,
+              mimeType: 'application/pdf',
               originalName: 'file1.txt'
             },
             {
               id: 2,
+              size: 1234235,
+              mimeType: 'image/png',
               originalName: 'file2.txt'
             }
           ],
@@ -92,6 +96,9 @@
     methods: {
       updateValue(property, value) {
         Vue.set(this.item, property, value)
+      },
+      formFileDeleted(property, id) {
+        Vue.set(this.item, property, this.item[property].filter(file => file.id != id))
       }
     },
     computed: {
