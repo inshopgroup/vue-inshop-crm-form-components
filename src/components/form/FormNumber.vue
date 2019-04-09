@@ -1,6 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label class="inshop-label" :for="fieldId">{{ label }}</label>
+    <label :for="fieldId">{{ label }}</label>
     <span v-if="required">*</span>
 
     <field-input 
@@ -66,7 +66,7 @@
     position: relative;
   }
 
-  .inshop-label {
+  .inshop-form label {
     margin-bottom: 5px;
     display: block;
     font-family: Arial, Helvetica, sans-serif;
@@ -75,20 +75,12 @@
     color: #000;
   }
 
-  .inshop-errors {
-    position: absolute;
-    bottom: -18px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: normal;
-    color: rgb(221, 80, 80);
-  }
-
-  #number {
+  .inshop-form input {
     width: 100%;
     height: 38px;
-    padding-left: 10px;
-    border: 1px solid rgb(221, 80, 80);
+    box-sizing: border-box;
+    border: 1px solid #000;
+    padding: 0 10px;
     border-radius: 5px;
     outline: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -97,8 +89,24 @@
     color: #000;
   }
 
-  #number::placeholder {
+  .inshop-form input::placeholder {
     color: #ccc;
+  }
+
+  .inshop-form.is-invalid label {
+    color: rgb(221, 80, 80);
+  }
+
+  .inshop-form.is-invalid .inshop-errors {
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: rgb(221, 80, 80);
+  }
+
+  .inshop-form.is-invalid input {
+    border: 1px solid rgb(221, 80, 80);
   }
 
 </style>

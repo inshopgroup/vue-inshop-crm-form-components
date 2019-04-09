@@ -1,6 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label class="check" :for="fieldId">{{ label }}</label>
+    <label :for="fieldId">{{ label }}</label>
       <field-checkbox
           :id="fieldId"
           :item="item"
@@ -63,23 +63,14 @@
     position: relative;
   }
 
-  .inshop-errors {
-    position: absolute;
-    bottom: -18px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: normal;
-    color: rgb(221, 80, 80);
-  }
-
-  .inshop-checkbox-label {
+  .inshop-form .inshop-checkbox-label {
     padding-left: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: normal;
   }
 
-  .check {
+  .inshop-form label {
     margin-top: 16px;
     padding-left: 23px;
 		position: relative;
@@ -88,6 +79,10 @@
 		font-size: 16px;
     line-height: normal;
 		color: #000;
+  }
+
+  .inshop-form.is-invalid label {
+    color: #000;
   }
 
   input[type="checkbox"] + .check__span {
@@ -114,7 +109,7 @@
     transform: translateY(-50%);
   }
 
-  .check__hidden {
+  .inshop-form .check__hidden {
     display: none;
   }
 
@@ -133,7 +128,7 @@
     overflow: hidden;
   }
 
-  #checkbox {
+  .inshop-form input {
     position: absolute;
     left: -2px;
     top: -1px;
@@ -141,6 +136,14 @@
     opacity: 0;
     border: none;
     cursor: pointer;
+  }
+
+  .inshop-form.is-invalid .inshop-errors {
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: rgb(221, 80, 80);
   }
 
 </style>

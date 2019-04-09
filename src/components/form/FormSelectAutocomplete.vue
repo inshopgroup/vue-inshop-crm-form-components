@@ -1,6 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label class="inshop-label" :for="fieldId">{{ label }}</label>
+    <label :for="fieldId">{{ label }}</label>
     <span v-if="required">*</span>
 
     <field-select
@@ -113,8 +113,8 @@
     margin-bottom: 30px;
     position: relative;
   }
-  
-  .inshop-label {
+
+  .inshop-form label {
     margin-bottom: 5px;
     display: block;
     font-family: Arial, Helvetica, sans-serif;
@@ -123,9 +123,11 @@
     color: #000;
   }
 
-  .inshop-errors {
-    position: absolute;
-    bottom: -18px;
+  .inshop-form.is-invalid label {
+    color: rgb(221, 80, 80);
+  }
+
+  .inshop-form.is-invalid .inshop-errors {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: normal;
@@ -133,3 +135,29 @@
   }
 
 </style>
+
+<style>
+
+  .inshop-form .v-select.searchable .dropdown-toggle {
+    width: 100%;
+    height: 38px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .inshop-form .v-select .open-indicator:before {
+    border-color: #000;
+  }
+
+  .inshop-form.is-invalid .v-select.searchable .dropdown-toggle {
+    border: 1px solid rgb(221, 80, 80);
+  }
+
+  .inshop-form.is-invalid .v-select .open-indicator:before {
+    border-color: rgb(221, 80, 80);
+  }
+
+</style>
+

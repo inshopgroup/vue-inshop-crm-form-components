@@ -1,6 +1,7 @@
 <template>
+
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label class="inshop-label" :for="fieldId">{{ label }}</label>
+    <label :for="fieldId">{{ label }}</label>
     <span v-if="required">*</span>
 
     <vue-ctk-date-time-picker
@@ -64,14 +65,14 @@
   }
 </script>
 
-<style scoped>
+<style>
 
   .inshop-form {
     margin-bottom: 30px;
     position: relative;
   }
 
-  .inshop-label {
+  .inshop-form label {
     margin-bottom: 5px;
     display: block;
     font-family: Arial, Helvetica, sans-serif;
@@ -80,17 +81,34 @@
     color: #000;
   }
 
-  .inshop-errors {
-    position: absolute;
-    bottom: -22px;
+  .inshop-form.is-invalid label {
+    color: rgb(221, 80, 80);
+  }
+
+  .inshop-form.is-invalid .inshop-errors {
+    margin-top: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: normal;
     color: rgb(221, 80, 80);
   }
 
-  #date {
+</style>
+
+<style>
+
+  .date-time-picker input.field-input {
+    width: 100%;
     height: 38px;
+    min-height: 38px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .inshop-form.is-invalid .date-time-picker input.field-input {
+    border: 1px solid rgb(221, 80, 80);
   }
 
 </style>

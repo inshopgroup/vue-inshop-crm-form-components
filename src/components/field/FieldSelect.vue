@@ -45,15 +45,11 @@
   }
 </script>
 
-<style>
+<style scoped>
 
   .inshop-form {
     margin-bottom: 30px;
     position: relative;
-  }
-
-  .v-select.searchable .dropdown-toggle {
-    height: 38px;
   }
 
 </style>

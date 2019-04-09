@@ -21,8 +21,6 @@
 
 <script>
   import Vue from 'vue'
-  // import sassStyles from "./sass/style.scss";
-  // import "./sass/style.scss";
   import FormInput from "./components/form/FormInput";
   import FormPassword from "./components/form/FormPassword";
   import FormTextarea from "./components/form/FormTextarea";
@@ -50,11 +48,6 @@
       FormPassword,
       FormInput
     },
-    // metaInfo: {
-    //   link: [
-    //     { rel: 'stylesheet', href: './sass/style.scss' },
-    //   ]
-    // },
     data() {
       return {
         item: {
@@ -100,14 +93,14 @@
   }
 </script>
 
-<style scoped>
+<style>
 
   .app-inner {
     max-width: 600px;
     margin: auto;
     border-radius: 5px;
     border: 1px solid #000;
-    padding: 20px 45px 20px 33px;
+    padding: 20px 30px 20px 30px;
   }
   
 </style>
