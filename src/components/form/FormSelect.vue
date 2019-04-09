@@ -1,7 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId">{{ label }}</label>
-    <span v-if="required">*</span>
+    <label :for="fieldId"><span v-if="required">* </span>{{ label }}</label>
 
     <field-select
         :id="fieldId"
@@ -13,12 +12,13 @@
         @input="$emit('formUpdated', property, $event)"
     ></field-select>
 
-    <div v-if="isInvalid" class="help-block">{{ errors[property] }}</div>
+    <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
 </template>
 
 <script>
   import FieldSelect from "../field/FieldSelect";
+  import "../../sass/styles.scss"
 
   export default {
     name: 'FormSelect',
@@ -88,3 +88,4 @@
     }
   }
 </script>
+

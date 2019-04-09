@@ -7,8 +7,7 @@
         @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
     ></field-checkbox>
 
-    <span v-if="required">*</span>
-    <label :for="fieldId">{{ label }}</label>
+    <label :for="fieldId" class="checkbox"><span v-if="required">* </span>{{ label }}</label>
 
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>
@@ -16,6 +15,7 @@
 
 <script>
   import FieldCheckbox from "../field/FieldCheckbox";
+  import "../../sass/styles.scss"
 
   export default {
     name: 'FormCheckbox',
