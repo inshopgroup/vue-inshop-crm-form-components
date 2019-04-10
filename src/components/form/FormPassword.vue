@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import VuePassword from "vue-password/src/components/VuePassword";
+  import VuePassword from "vue-password/dist/custom";
   import "../../sass/styles.scss"
 
   export default {
