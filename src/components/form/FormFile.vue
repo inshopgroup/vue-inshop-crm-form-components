@@ -68,7 +68,7 @@
         required: true
       },
       axios: {
-        type: Object,
+        type: Function,
         default: null
       },
       multiple: {

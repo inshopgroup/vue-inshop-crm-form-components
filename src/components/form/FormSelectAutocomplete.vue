@@ -9,7 +9,7 @@
         :options="options"
         :label="optionLabel"
         :multiple="multiple"
-        @input="$emit('formUpdated', property, $event)"
+        @fieldUpdated="(property, event) => {$emit('formUpdated', property, event)}"
         @loadOptions="loadOptions"
     ></field-select>
 
@@ -43,10 +43,6 @@
         default: 'name'
       },
       optionStore: {
-        type: String,
-        required: true
-      },
-      optionUrl: {
         type: String,
         required: true
       },
@@ -96,7 +92,9 @@
           debounce(
             (loading, keyword, vm) => {
               vm.$store.dispatch('general/loadingAllow', false)
-              vm.$store.dispatch(vm.optionStore + '/getItems', '/' + vm.optionUrl + '?' + vm.searchField + '=' + keyword)
+              vm.$store.dispatch(vm.optionStore + '/getItems', {
+                [vm.searchField]: keyword
+              })
               loading(false);
             },
             800
@@ -106,4 +104,3 @@
     }
   }
 </script>
-

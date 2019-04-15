@@ -9,7 +9,7 @@
         :options="options"
         :label="optionLabel"
         :multiple="multiple"
-        @input="$emit('formUpdated', property, $event)"
+        @fieldUpdated="(property, event) => {$emit('formUpdated', property, event)}"
     ></field-select>
 
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
