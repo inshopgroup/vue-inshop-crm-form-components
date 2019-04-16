@@ -1,6 +1,6 @@
 {
   "name": "@inshopgroup/vue-inshop-crm-form-components",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "public": true,
   "scripts": {
     "serve": "vue-cli-service serve",

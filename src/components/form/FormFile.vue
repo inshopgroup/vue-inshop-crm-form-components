@@ -111,7 +111,7 @@
 
             data.append(this.formProperty, file)
 
-            this.axios.post(`${process.env.API_URL}/${this.route}`, data, config)
+            this.axios.post(this.route, data, config)
               .then(response => {
                 this.$emit('formFileUploaded', response.data)
               })
@@ -123,7 +123,7 @@
       },
       deleteFile(id) {
         if (confirm('Are you sure?')) {
-          this.$emit('formFileDeleted', this.property, id)
+          this.$emit('formFileDeleted', id)
         }
       }
     }
