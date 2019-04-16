@@ -89,7 +89,7 @@
       },
       search: debounce((loading, keyword, vm) => {
         vm.$store.dispatch('general/loadingAllow', false)
-        vm.$store.dispatch(vm.storePath + '/getItems', {
+        vm.$store.dispatch(vm.optionStore + '/getItems', {
           [vm.searchField]: keyword
         })
         loading(false);
