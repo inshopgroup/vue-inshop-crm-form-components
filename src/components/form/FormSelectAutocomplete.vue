@@ -87,20 +87,13 @@
         loading(true);
         this.search(loading, keyword, this);
       },
-      search() {
-        if (this.$store) {
-          debounce(
-            (loading, keyword, vm) => {
-              vm.$store.dispatch('general/loadingAllow', false)
-              vm.$store.dispatch(vm.optionStore + '/getItems', {
-                [vm.searchField]: keyword
-              })
-              loading(false);
-            },
-            800
-          )
-        }
-      }
+      search: debounce((loading, keyword, vm) => {
+        vm.$store.dispatch('general/loadingAllow', false)
+        vm.$store.dispatch(vm.storePath + '/getItems', {
+          [vm.searchField]: keyword
+        })
+        loading(false);
+      }, 800),
     }
   }
 </script>
