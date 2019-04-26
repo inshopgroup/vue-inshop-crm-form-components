@@ -8,6 +8,7 @@ import FormDatePicker from './components/form/date/FormDatePicker'
 import FormDateTimePicker from './components/form/date/FormDateTimePicker'
 import FormCheckbox from './components/form/FormCheckbox'
 import FormInput from './components/form/FormInput'
+import FormNumber from './components/form/FormNumber'
 import FormPassword from './components/form/FormPassword'
 import FormTextarea from './components/form/FormTextarea'
 import FormSelect from './components/form/FormSelect'
@@ -25,6 +26,7 @@ const Components = {
   FormDateTimePicker,
   FormCheckbox,
   FormInput,
+  FormNumber,
   FormPassword,
   FormTextarea,
   FormFile,
