@@ -6,7 +6,7 @@
       <table class="table table-striped table-hover">
         <thead>
         <tr>
-          <th>Preview</th>
+<!--          <th>Preview</th>-->
           <th>Name</th>
           <th>Size</th>
           <th>Mime type</th>
@@ -16,13 +16,13 @@
         </thead>
         <tbody>
         <tr v-for="file in item[property]" :key="file.id">
-          <td>
-            Preview
-          </td>
+<!--          <td>-->
+<!--            <file-preview :file="file" :axios="axios" :route="route"></file-preview>-->
+<!--          </td>-->
           <td>{{ file.originalName }}</td>
           <td>{{ filesize(file.size) }}</td>
           <td>{{ file.mimeType }}</td>
-          <td>{{ moment(file.createdAt).format('DD-MM-YYYY HH:mm') }}</td>
+          <td>{{ fecha.format(fecha.parse(file.createdAt, 'YYYY-MM-DDTHH:mm:ss'), 'DD-MM-YYYY HH:mm') }}</td>
           <td>
             <button type="button" @click.prevent="deleteFile(file.id)">Delete</button>
           </td>
@@ -42,10 +42,12 @@
 <script>
   import "../../sass/styles.scss"
   import filesize from "filesize"
-  import moment from "moment"
+  import fecha from "fecha"
+  import FilePreview from "../FilePreview";
 
   export default {
     name: 'FormFile',
+    components: {FilePreview},
     props: {
       id: {
         type: String,
@@ -91,7 +93,7 @@
     data() {
       return {
         filesize: filesize,
-        moment: moment,
+        fecha: fecha,
       }
     },
     computed: {

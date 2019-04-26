@@ -65,13 +65,15 @@
               id: 1,
               size: 1234235,
               mimeType: 'application/pdf',
-              originalName: 'file1.txt'
+              originalName: 'file1.txt',
+              createdAt: '2019-03-16T20:59:57+01:00'
             },
             {
               id: 2,
               size: 1234235,
               mimeType: 'image/png',
-              originalName: 'file2.txt'
+              originalName: 'file2.txt',
+              createdAt: '2019-03-16T20:59:57+01:00'
             }
           ],
           select: null,
