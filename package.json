@@ -1,6 +1,6 @@
 {
   "name": "@inshopgroup/vue-inshop-crm-form-components",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "public": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -35,6 +35,7 @@
   "main": "./dist/vue-inshop-crm-form-components.common.js",
   "devDependencies": {
     "vue": "^2.6.10",
+    "vue-i18n": "^8.11.2",
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-eslint": "^3.5.0",
     "@vue/cli-service": "^3.5.0",

@@ -1,18 +1,18 @@
 <template>
   <div id="app">
     <div class="app-inner">
-      <form-input :item="item" property="input" label="Input" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-input>
-      <form-number :item="item" property="number" label="Number" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-number>
+      <form-input :item="item" property="input" label="input" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-input>
+      <form-number :item="item" property="number" label="number" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-number>
       <form-input type="email" :item="item" :required="true" property="email" label="email" placeholder="some placeholder" :errors="errors" @formUpdated="updateValue"></form-input>
-      <form-password :item="item" property="password" label="Password" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-password>
-      <form-textarea :item="item" property="textarea" label="Textarea" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-textarea>
-      <form-checkbox :item="item" property="checkbox" label="Checkbox" :required="true" :errors="errors" @formUpdated="updateValue"></form-checkbox>
-      <form-time-picker :item="item" property="time" label="Time" :required="true" :errors="errors" @formUpdated="updateValue"></form-time-picker>
-      <form-date-picker :item="item" property="date" label="Date" :required="true" :errors="errors" @formUpdated="updateValue"></form-date-picker>
-      <form-date-time-picker :item="item" property="datetime" label="Datetime" :required="true" :errors="errors" @formUpdated="updateValue"></form-date-time-picker>
-      <form-file :item="item" property="files" form-property="file" :required="true" route="/file" label="Files" :errors="errors" @formFileDeleted="formFileDeleted"></form-file>
-      <form-select :item="item" property="select" option-store="someproperty" label="Select" :required="true" :errors="errors" @formUpdated="updateValue"></form-select>
-      <form-select-autocomplete :item="item" property="autocomplete" option-store="someproperty" optionUrl="someurl" label="Select" :required="true" :errors="errors" @formUpdated="updateValue"></form-select-autocomplete>
+      <form-password :item="item" property="password" label="password" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-password>
+      <form-textarea :item="item" property="textarea" label="textarea" placeholder="some placeholder" :required="true" :errors="errors" @formUpdated="updateValue"></form-textarea>
+      <form-checkbox :item="item" property="checkbox" label="checkbox" :required="true" :errors="errors" @formUpdated="updateValue"></form-checkbox>
+      <form-time-picker :item="item" property="time" label="time" :required="true" :errors="errors" @formUpdated="updateValue"></form-time-picker>
+      <form-date-picker :item="item" property="date" label="date" :required="true" :errors="errors" @formUpdated="updateValue"></form-date-picker>
+      <form-date-time-picker :item="item" property="datetime" label="datetime" :required="true" :errors="errors" @formUpdated="updateValue"></form-date-time-picker>
+      <form-file :item="item" property="files" form-property="file" :required="true" route="/file" label="files" :errors="errors" @formFileDeleted="formFileDeleted"></form-file>
+      <form-select :item="item" property="select" option-store="someproperty" label="select" :required="true" :errors="errors" @formUpdated="updateValue"></form-select>
+      <form-select-autocomplete :item="item" property="autocomplete" option-store="someproperty" optionUrl="someurl" label="select" :required="true" :errors="errors" @formUpdated="updateValue"></form-select-autocomplete>
 
       <pre>{{ data }}</pre>
     </div>
