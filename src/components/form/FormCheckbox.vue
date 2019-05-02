@@ -7,7 +7,7 @@
         @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
     ></field-checkbox>
 
-    <label :for="fieldId" class="checkbox"><span v-if="required">* </span>{{ label }}</label>
+    <label :for="fieldId" class="checkbox"><span v-if="required">* </span>{{ $t(label) }}</label>
 
     <div v-if="isInvalid" class="inshop-errors">{{ errors[property] }}</div>
   </div>

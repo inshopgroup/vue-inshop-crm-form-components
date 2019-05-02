@@ -1,6 +1,6 @@
 <template>
   <div :class="['inshop-form', isInvalid ? 'is-invalid' : '']">
-    <label :for="fieldId"><span v-if="required">* </span>{{ label }}</label>
+    <label :for="fieldId"><span v-if="required">* </span>{{ $t(label) }}</label>
 
     <field-select
         :id="fieldId"
