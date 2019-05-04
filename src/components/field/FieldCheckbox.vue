@@ -1,7 +1,7 @@
 <template>
   <input
       :id="id"
-      :value="item[property]"
+      :checked="item[property]"
       type="checkbox"
       @input="$emit('fieldUpdated', property, $event.target.checked)"
   />

@@ -56,7 +56,7 @@
           email: null,
           password: null,
           textarea: null,
-          checkbox: null,
+          checkbox: true,
           time: null,
           date: null,
           datetime: null,
