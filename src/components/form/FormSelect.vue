@@ -50,7 +50,7 @@
       },
       errors: {
         type: Object,
-        default: () => {}
+        default: () => ({})
       },
       label: {
         type: String,

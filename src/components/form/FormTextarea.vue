@@ -49,7 +49,7 @@
       },
       errors: {
         type: Object,
-        default: () => {}
+        default: () => ({})
       },
       required: {
         type: Boolean,
