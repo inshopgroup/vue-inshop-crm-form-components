@@ -4,7 +4,7 @@
         :id="fieldId"
         :item="item"
         :property="property"
-        @fieldUpdated="(property, value) => {$emit('formUpdated', property, value)}"
+        @fieldUpdated="(property, value) => {$emit('formUpdated', property, value, id)}"
     ></field-checkbox>
 
     <label :for="fieldId" class="checkbox"><span v-if="required">* </span>{{ $t(label) }}</label>
