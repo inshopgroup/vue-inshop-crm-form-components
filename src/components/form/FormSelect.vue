@@ -7,7 +7,7 @@
         :item="item"
         :property="property"
         :options="options"
-        :label="optionLabel"
+        :option-label="optionLabel"
         :multiple="multiple"
         @fieldUpdated="(property, event) => {$emit('formUpdated', property, event)}"
     ></field-select>
